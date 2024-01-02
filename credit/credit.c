@@ -1,23 +1,52 @@
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
+#include <stdlib.h>
 
-const char* verityCardType(long userInput);
+const char* verifyUserInput(long userInput);
+const char* convertToString(long userInput);
 long get_long(void);
 
 int main(void)
 {
+    int sumWithMuliplication = 0;
+    int sumWithoutMuliplication = 0;
     long userInput = get_long();
 
-    const char* cardType = verifyCardType(userInput); 
+    const char* cardType = verifyUserInput(userInput); 
+    const char* invalidStr = "INVALID";
 
-    // Print the result
-    printf("Card Type: %s\n", cardType);
+    if (cardType == invalidStr)
+    {
+        printf("Card Type: %s\n", cardType);
+        return 0;
+    }
 
+    const char* cardNumberConverted = convertToString(userInput);
+    int digitLength = strlen(cardNumberConverted);
+
+    for (int i = 0; i < digitLength; i++)
+    {
+        if (i == 0)
+        {
+            sumWithMuliplication += (atoi(&cardNumberConverted[i]) * 2);
+            continue;
+        }
+        sumWithMuliplication += (atoi(&cardNumberConverted[i + 1]) * 2);
+        sumWithoutMuliplication += atoi(&cardNumberConverted[i]);
+    }
+
+    if ((sumWithMuliplication + sumWithoutMuliplication) % 10 == 0)
+    {
+        printf("Card Type: %s\n", cardType);
+        return 0;
+    }
+
+    printf("Card Type: INVALID\n");
     return 0;
 }
 
-const char* verifyCardType(long userInput)
+const char* convertToString(long userInput) 
 {
     int maxDigits = snprintf(NULL, 0, "%ld", userInput);
     
@@ -26,6 +55,21 @@ const char* verifyCardType(long userInput)
 
     // Convert the long to a string
     sprintf(buffer, "%ld", userInput);
+    // printf("Card Type: %s\n", buffer);
+
+    const char* text = buffer;
+    return text;
+}
+
+const char* verifyUserInput(long userInput)
+{
+    const char* buffer = convertToString(userInput);
+
+    int digitLength = strlen(buffer);
+
+    if (!(digitLength >= 13 && digitLength <= 17)) {
+        return "INVALID";
+    }
 
     // Verify first digit of the number
     char firstDigit = buffer[0];
