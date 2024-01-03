@@ -24,7 +24,7 @@ int main(void)
 
     const char* cardNumberConverted = convertToString(userInput);
     int digitLength = strlen(cardNumberConverted);
-
+    printf("\n");
     for (int i = 0; i < digitLength; i++)
     {
         if (i == 0)
@@ -55,7 +55,6 @@ const char* convertToString(long userInput)
 
     // Convert the long to a string
     sprintf(buffer, "%ld", userInput);
-    // printf("Card Type: %s\n", buffer);
 
     const char* text = buffer;
     return text;
