@@ -12,7 +12,7 @@ int main(void)
         // Read the input from the user
         scanf("%d", &userInput);
     }
-    while (userInput < 0);
+    while (userInput <= 0);
     
     int counter = 0;
     while (userInput > 0)
