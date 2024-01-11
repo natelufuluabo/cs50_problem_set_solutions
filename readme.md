@@ -1,5 +1,6 @@
-# Problem Set 1 Solutions
+# Goal
 
 
-Solutions for the the week 1 problems from the CS50 course.
-Solutions implemented with pure C - No library from the CS50 team.
+- Resolve problem sets of CS50 2024
+
+- Solutions implemented with pure C - No library from the CS50 team.
