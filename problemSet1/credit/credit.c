@@ -27,13 +27,28 @@ int main(void)
     printf("\n");
     for (int i = 0; i < digitLength; i++)
     {
-        if (i == 0)
+        if (i % 2 != 0)
         {
-            sumWithMuliplication += (atoi(&cardNumberConverted[i]) * 2);
-            continue;
+            sumWithoutMuliplication += atoi(&cardNumberConverted[i]);
         }
-        sumWithMuliplication += (atoi(&cardNumberConverted[i + 1]) * 2);
-        sumWithoutMuliplication += atoi(&cardNumberConverted[i]);
+        else
+        {
+            int product = (atoi(&cardNumberConverted[i + 1]) * 2);
+            const char* productString = convertToString(product);
+            int productStringLength = strlen(productString);
+            if (productStringLength > 1)
+            {
+                for (int j = 0; j < productStringLength; j++)
+                {
+                    sumWithMuliplication += (atoi(&productString[i]));
+                }
+            } 
+            else
+            {
+                sumWithMuliplication += product;
+            }
+        }
+        
     }
 
     if ((sumWithMuliplication + sumWithoutMuliplication) % 10 == 0)
