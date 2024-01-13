@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": ".",
-      "program": "build/Debug/outDebug"
+      "cwd": "/Users/nathankalalalufuluabo/Desktop/cs50_problem_set_solutions/problemSet1",
+      "program": "/Users/nathankalalalufuluabo/Desktop/cs50_problem_set_solutions/problemSet1/build/Debug/outDebug"
     }
   ]
 }
