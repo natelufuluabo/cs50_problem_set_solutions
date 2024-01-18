@@ -6,8 +6,8 @@
       "type": "lldb",
       "request": "launch",
       "args": [],
-      "cwd": "/Users/nathankalalalufuluabo/Desktop/cs50_problem_set_solutions/problemSet2/scrabble",
-      "program": "/Users/nathankalalalufuluabo/Desktop/cs50_problem_set_solutions/problemSet2/scrabble/build/Debug/outDebug"
+      "cwd": "/Users/nathankalalalufuluabo/Desktop/cs50_problem_set_solutions/problemSet2/readability",
+      "program": "/Users/nathankalalalufuluabo/Desktop/cs50_problem_set_solutions/problemSet2/readability/build/Debug/outDebug"
     }
   ]
 }
